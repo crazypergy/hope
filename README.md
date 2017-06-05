@@ -1,24 +1,10 @@
-# README
+Hope Chapel
+〒631-0077 奈良市富雄川西2-2-20
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+([The original website](http://hope-chapel.wixsite.com/hope))
 
-Things you may want to cover:
+[Facebook](https://www.facebook.com/HopeEnglishService)
+[Twitter](https://twitter.com/hope_chapel?lang=ja)
+[Google](https://plus.google.com/109077208727225203434)
+[Instagram](https://www.instagram.com/afleru/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
