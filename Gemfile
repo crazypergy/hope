@@ -30,6 +30,9 @@ gem 'devise'
 gem 'figaro'
 gem 'bootstrap-sass'
 
+# For the access map
+gem 'gmaps4rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13.0'
