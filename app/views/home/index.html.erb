@@ -11,36 +11,4 @@
 <%= link_to "Try Art", "#" %>
 <%= link_to "Dance", "#" %>
 <%= link_to "Staff", "#"  %>
-<%= link_to "Access", "#" %>
-
-<br/>
-
-<!-- TODO: Place this all in the access page after it's made -->
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-
-<script>
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers([
-      {
-        // TODO: Google gave me these coordinates,
-        // but the placement seems a little off, so adjusting it might not be a bad idea
-        "lat": 34.696258,
-        "lng": 135.732261,
-        "picture": {
-          // TODO: Change this to a church symbol or something.
-          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-          "width":  32,
-          "height": 32
-        },
-        "infowindow": "ホープチャペル Hope Chapel" // TODO: Put the address in here?
-      }
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    // The station can be seen when the zoom at 16 so I think this should be fine.
-    handler.getMap().setZoom(16);
-  });
-</script>
+<%= link_to "Access", home_access_path %>

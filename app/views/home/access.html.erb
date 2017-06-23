@@ -1,0 +1,33 @@
+<!-- Checkout the readme at the gmaps4rails repository for details -->
+<% str = "\"//maps.google.com/maps/api/js?key=" + ENV['gmaps_api_key'] + "\"" %>
+<script src=<%= str.html_safe %>></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        // TODO: Google gave me these coordinates,
+        // but the placement seems a little off, so adjusting it might not be a bad idea
+        "lat": 34.696258,
+        "lng": 135.732261,
+        "picture": {
+          // TODO: Change this to a church symbol or something.
+          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+          "width":  32,
+          "height": 32
+        },
+        "infowindow": "JEC ホープチャペル Hope Chapel"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    // The station can be seen when the zoom at 16 so I think this should be fine.
+    handler.getMap().setZoom(16);
+  });
+</script>
