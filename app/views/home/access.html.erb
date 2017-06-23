@@ -12,17 +12,10 @@
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers([
       {
-        // TODO: Google gave me these coordinates,
-        // but the placement seems a little off, so adjusting it might not be a bad idea
-        "lat": 34.696258,
-        "lng": 135.732261,
-        "picture": {
-          // TODO: Change this to a church symbol or something.
-          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-          "width":  32,
-          "height": 32
-        },
-        "infowindow": "JEC ホープチャペル Hope Chapel"
+        "lat": 34.696041,
+        "lng": 135.732459,
+        // Other stuff like "picture" can be added as well, but I think it's fine how it is now.
+        // "infowindow": "JEC ホープチャペル Hope Chapel"
       }
     ]);
     handler.bounds.extendWith(markers);
