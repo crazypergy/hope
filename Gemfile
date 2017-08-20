@@ -23,6 +23,7 @@ gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
 # Windows dependency
 gem 'coffee-script-source', '1.8.0'
+gem 'execjs'
 
 # (Will probably use heroku)
 # Use Capistrano for deployment
@@ -59,6 +60,8 @@ group :test do
   gem 'database_cleaner'
   gem 'better_errors'
 end
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
