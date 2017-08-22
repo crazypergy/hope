@@ -11,6 +11,9 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', github: "rails/sass-rails"
 
+# Use PostgreSQL for database
+gem 'pg', '~> 0.18'
+
 gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
