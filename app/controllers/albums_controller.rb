@@ -28,6 +28,14 @@ class AlbumsController < ApplicationController
 
     respond_to do |format|
       if @album.save
+
+        # Logic for multiple photos
+        if params[:images]
+          params[:images].each do |image|
+            @album.photos.create(image: image)
+          end
+        end
+
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
       else
