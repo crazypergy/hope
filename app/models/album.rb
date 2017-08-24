@@ -4,4 +4,3 @@ class Album < ApplicationRecord
 
   attr_accessor :photos_attributes
 end
-
