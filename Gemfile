@@ -32,7 +32,6 @@ gem 'execjs'
 # gem 'capistrano-rails', group: :development
 
 # For adding photos
-# gem 'carrierwave', '~> 1.0' Not sure if we'll use carrierwave
 gem 'paperclip', '~> 5.0.0'
 
 gem 'devise'
