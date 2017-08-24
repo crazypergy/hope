@@ -31,7 +31,10 @@ gem 'execjs'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'carrierwave', '~> 1.0'
+# For adding photos
+# gem 'carrierwave', '~> 1.0' Not sure if we'll use carrierwave
+gem 'paperclip', '~> 5.0.0'
+
 gem 'devise'
 gem 'figaro'
 gem 'bootstrap-sass'

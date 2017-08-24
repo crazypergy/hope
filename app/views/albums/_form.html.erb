@@ -1,27 +1,30 @@
-<%= form_with(model: album, local: true) do |form| %>
-  <% if album.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
+<%= form_for @album, html: { class: 'form-horizontal', multipart: true } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, class: 'control-label' %>
 
-      <ul>
-      <% album.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="controls">
+      <%= f.text_field :title, class: 'text-field' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :album_title %>
   </div>
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category, id: :album_category %>
+  <div class="control-group">
+    <%= f.label :category, class: 'control-label' %>
+
+    <div class="controls">
+      <%= f.text_field :category, class: 'text_field' %> <!-- TODO: Make this into a select tag -->
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="control-group">
+    <%= f.label :pictures, class: 'control-label' %>
+
+    <div class="controls">
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, class: 'btn btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")), albums_path, class: 'btn btn-mini' %>
   </div>
 <% end %>
