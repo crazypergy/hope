@@ -27,6 +27,12 @@
     </div>
   </div>
 
+  <button type="button" onclick="add_photo();">Add photo</button>
+
+  <div id="photos">
+    <input class="photo" type="file" /><button type="button" onclick="delete_photo(this);">Delete photo</button>
+  </div>
+
   <div class="control-group">
     <%= f.label :pictures, class: 'control-label' %>
 

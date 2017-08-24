@@ -17,3 +17,17 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+
+// albums/_form.html.erb
+function add_photo() {
+  var photos_div = document.getElementById('photos');
+  $(photos_div).prepend(
+    '<input class="photo" type="file" />' +
+    '<button type="button" onclick="delete_photo(this);">Delete photo</button>'
+  );
+}
+
+function delete_photo (button) {
+  $(button).prev().remove();
+  $(button).remove();
+}
