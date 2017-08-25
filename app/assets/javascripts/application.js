@@ -22,12 +22,31 @@
 function add_photo() {
   var photos_div = document.getElementById('photos');
   $(photos_div).prepend(
-    '<input class="photo" name="images[]" type="file" />' +
+    '<input class="photo" name="images[]" type="file" onchange="display_picture_from(this);" />' +
+    '<img src="#" alt=""/>' +
     '<button type="button" onclick="delete_photo(this);">Delete photo</button>'
   );
 }
 
+function display_picture_from(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $(input).next().attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 function delete_photo (button) {
-  $(button).prev().remove();
+
+  // Delete the img tag and the input tag before it
+  for (var i = 0; i < 2; i++) {
+    $(button).prev().remove();
+  }
+
+  // Delete the button itself
   $(button).remove();
 }
