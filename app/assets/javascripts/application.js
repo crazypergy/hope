@@ -22,7 +22,7 @@
 function add_photo() {
   var photos_div = document.getElementById('photos');
   $(photos_div).prepend(
-    '<input class="photo" type="file" />' +
+    '<input class="photo" name="images[]" type="file" />' +
     '<button type="button" onclick="delete_photo(this);">Delete photo</button>'
   );
 }
