@@ -37,6 +37,9 @@ function display_picture_from(input) {
     }
 
     reader.readAsDataURL(input.files[0]);
+
+    // Hide input button after attaching image
+    input.style.display = "none";
   }
 }
 
