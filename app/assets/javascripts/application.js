@@ -19,12 +19,27 @@
 //= require gmaps/google
 
 // albums/_form.html.erb
-function add_photo() {
+
+/*
+ * TODO: Write Javascript tests
+ *
+ * Things are working fine for now, but I'm a little afraid of using #prev and #next here and there.
+ * in #display_picture_from(input), the $(input).next().next().show() line is kind of scary.
+ * Just make sure that in the midst of deleting tags and leaving other tags undeleted,
+ * that everything will still work out fine.
+ */
+
+function add_photo_input() {
   var photos_div = document.getElementById('photos');
   $(photos_div).prepend(
+    // TODO: I don't like how type="file" makes the file name show up on the side of the button.
+    // It's a dirty hack that I don't REALLY want to do, but it's possible to hide the input,
+    // and make an entirely new button that will trigger #display_picture_from($(this).prev());.
+    // Again, this could potentially make a mess with the #prev and #next stuff I was talking about
+    // earlier, so try to think of a good, clean solution.
     '<input class="photo" name="images[]" type="file" onchange="display_picture_from(this);" />' +
     '<img src="#" alt=""/>' +
-    '<button type="button" onclick="delete_photo(this);">Delete photo</button>'
+    '<button type="button" onclick="delete_photo(this);" style="display: none;">Delete photo</button>'
   );
 }
 
@@ -38,13 +53,14 @@ function display_picture_from(input) {
 
     reader.readAsDataURL(input.files[0]);
 
-    // Hide input button after attaching image
+    // Hide input button after attaching image, show delete button, add another input tag
     input.style.display = "none";
+    $(input).next().next().show();
+    add_photo_input();
   }
 }
 
-function delete_photo (button) {
-
+function delete_photo(button) {
   // Delete the img tag and the input tag before it
   for (var i = 0; i < 2; i++) {
     $(button).prev().remove();

@@ -30,10 +30,20 @@
   <div class="control-group">
     <%= f.label :photos, class: 'control-label' %>
 
-    <button type="button" onclick="add_photo();">+</button>
-
     <div id="photos">
-      <!-- TODO: Automate the inputs when edit.html.erb -->
+      <script>
+        window.onload = function() { add_photo_input(); }
+      </script>
+      <!--
+        TODO: When edit.html.erb is accessed, fill in all of the @album.images
+        after the initial input tag added with script above
+      -->
+      <%# if !@album.images.empty? %>
+        <%#= @album.images.each do |image| %>
+          <%#= image_tag image.image_file_name %>
+          <%#= button_tag 'Delete Photo', type: 'button', class: 'btn btn-danger' %>
+        <%# end %>
+      <%# end %>
     </div>
   </div>
 
