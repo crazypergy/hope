@@ -34,16 +34,13 @@
       <script>
         window.onload = function() { add_photo_input(); }
       </script>
-      <!--
-        TODO: When edit.html.erb is accessed, fill in all of the @album.images
-        after the initial input tag added with script above
-      -->
-      <%# if !@album.images.empty? %>
-        <%#= @album.images.each do |image| %>
-          <%#= image_tag image.image_file_name %>
-          <%#= button_tag 'Delete Photo', type: 'button', class: 'btn btn-danger' %>
-        <%# end %>
-      <%# end %>
+
+      <% if !@album.photos.empty? %>
+        <% @album.photos.each do |photo| %>
+          <%= image_tag photo.image %>
+          <%= link_to "delete", photo_path(photo), method: :delete, class: 'btn btn-danger' %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 

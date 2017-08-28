@@ -29,6 +29,7 @@ class AlbumsController < ApplicationController
     respond_to do |format|
       if @album.save
 
+        # TODO: Duplicated code in #update, fix that
         # Logic for multiple photos
         if params[:images]
           params[:images].each do |image|
@@ -50,6 +51,13 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
+
+        if params[:images]
+          params[:images].each do |image|
+            @album.photos.create(image: image)
+          end
+        end
+
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
         format.json { render :show, status: :ok, location: @album }
       else

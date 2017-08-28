@@ -12,3 +12,9 @@
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>
+<br/><br/>
+<% @album.photos.each do |photo| %>
+  <%= photo.id %><br/>
+  <%= photo.image %><br/>
+  <%= photo.image_file_name %><br/><br/>
+<% end %>

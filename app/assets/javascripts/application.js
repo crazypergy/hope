@@ -41,7 +41,7 @@ function add_photo_input() {
     '<div class="photo_wrapper">' +
       '<input class="photo_input" name="images[]" type="file" onchange="display_picture_from(this);" />' +
       '<img src="#" alt=""/>' +
-      '<button type="button" onclick="delete_photo(this);" style="display: none;">Delete photo</button>' +
+      '<button type="button" class="btn btn-danger" onclick="delete_photo(this);" style="display: none;">Delete photo</button>' +
     '</div>';
 
   $(photos_div).prepend(individual_photo_div);
@@ -64,12 +64,8 @@ function display_picture_from(input) {
   }
 }
 
+/* Deletes the photo, and then the button itself */
 function delete_photo(button) {
-  // Delete the img tag and the input tag before it
-  for (var i = 0; i < 2; i++) {
-    $(button).prev().remove();
-  }
-
-  // Delete the button itself
+  $(button).prev().remove();
   $(button).remove();
 }
