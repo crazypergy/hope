@@ -9,9 +9,7 @@ end
 gem 'rails', '~> 5.1.0.rc1'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', github: "rails/sass-rails"
-
-# Use PostgreSQL for database
-gem 'pg', '~> 0.18'
+gem 'sqlite3'
 
 gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
@@ -72,4 +70,3 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
