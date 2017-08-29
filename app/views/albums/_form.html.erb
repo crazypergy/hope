@@ -46,6 +46,12 @@
 
   <div class="form-actions">
     <%= f.submit nil, class: 'btn btn-primary' %>
-    <%= link_to t('.cancel', default: t("helpers.links.cancel")), albums_path, class: 'btn btn-mini' %>
+    <!--
+      I commented this out because even if the user presses cancel here,
+      any photos that were once saved to the database and are then deleted will be completely
+      deleted even if cancel is pressed. Is probably easier if the cancel button is taken
+      out altogether
+    -->
+    <%=# link_to t('.cancel', default: t("helpers.links.cancel")), albums_path, class: 'btn btn-mini' %>
   </div>
 <% end %>
