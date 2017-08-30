@@ -8,7 +8,7 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 
-# Add shuoulda matchers to the project
+# Add shoulda matchers to the project
 require 'shoulda/matchers'
 
 Shoulda::Matchers.configure do |config|

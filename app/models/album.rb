@@ -6,5 +6,5 @@ class Album < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 30 }
   validates :category, presence: true
-  # TODO: Validate number of images per album. A cap of 75 should be fine.
+  # TODO: Validate presence of images[] and number of images per album. A cap of 75 should be fine.
 end
