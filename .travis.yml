@@ -1,0 +1,20 @@
+language: ruby
+
+rvm:
+  - 2.3.3
+
+sudo: required
+
+notifications:
+  email: false
+
+before_install:
+  - gem update --system
+  - gem --version
+
+before_script:
+  - psql -c 'create database sanbika_test' -U postgres
+  - bundle exec rake db:migrate
+
+script: bundle exec rspec spec
+
