@@ -8,6 +8,14 @@ GIT
       sprockets (~> 4.x)
       sprockets-rails (< 4.0)
 
+GIT
+  remote: https://github.com/thoughtbot/shoulda-matchers.git
+  revision: edaf9cb926ee9c59c59729e7a4f8c206b44da8a1
+  branch: rails-5
+  specs:
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,8 +227,6 @@ GEM
     selenium-webdriver (3.4.4)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
-    shoulda-matchers (3.1.2)
-      activesupport (>= 4.0.0)
     slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -284,10 +290,10 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.0.rc1)
-  rspec-rails
+  rspec-rails (~> 3.6)
   sass-rails!
   selenium-webdriver
-  shoulda-matchers (~> 3.1)
+  shoulda-matchers!
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data

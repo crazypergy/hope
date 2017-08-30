@@ -61,9 +61,9 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers', '~> 3.1'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'database_cleaner'
   gem 'better_errors'
 end
