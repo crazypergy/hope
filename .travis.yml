@@ -13,7 +13,7 @@ before_install:
   - gem --version
 
 before_script:
-  - psql -c 'create database sanbika_test' -U postgres
+  - psql -c 'create database hope_test' -U postgres
   - bundle exec rake db:migrate
 
 script: bundle exec rspec spec
