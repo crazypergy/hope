@@ -18,6 +18,11 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+# To use #fixture_file_upload in Photo factory: https://stackoverflow.com/questions/18766030/factorygirl-and-papercip-attachement
+FactoryGirl::SyntaxRunner.class_eval do
+  include ActionDispatch::TestProcess
+end
+
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

@@ -15,4 +15,19 @@ RSpec.describe Photo, type: :model do
     # Association with Album
     it { is_expected.to belong_to(:album) }
   end
+
+  describe 'a valid photo' do
+    subject { photo }
+    let(:album) { FactoryGirl.create(:album) }
+    let(:photo) { FactoryGirl.create(:photo, album: album) }
+
+    context 'photo with title is valid' do
+      it { is_expected.to be_valid }
+    end
+
+    context 'photo without title is valid' do
+      let(:photo) { FactoryGirl.build(:photo, album: album, title: '') }
+      it { is_expected.to be_valid }
+    end
+  end
 end
