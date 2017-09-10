@@ -29,13 +29,8 @@ class AlbumsController < ApplicationController
     respond_to do |format|
       if @album.save
 
-        # TODO: Duplicated code in #update, fix that
         # Logic for multiple photos
-        if params[:images]
-          params[:images].each do |image|
-            @album.photos.create(image: image)
-          end
-        end
+        create_images_from(params[:images])
 
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
@@ -52,11 +47,8 @@ class AlbumsController < ApplicationController
     respond_to do |format|
       if @album.update(album_params)
 
-        if params[:images]
-          params[:images].each do |image|
-            @album.photos.create(image: image)
-          end
-        end
+        # Logic for multiple photos
+        create_images_from(params[:images])
 
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
         format.json { render :show, status: :ok, location: @album }
@@ -86,5 +78,13 @@ class AlbumsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
       params.require(:album).permit(:title, :category)
+    end
+
+    def create_images_from(data)
+      if data
+        data.each do |image|
+          @album.photos.create(image: image)
+        end
+      end
     end
 end
