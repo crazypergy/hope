@@ -2,3 +2,10 @@
 
 <!-- TODO: Would probably be cool to add a Hope English section and a Try Art section at the bottom here. Then the footer -->
 
+<br/>
+<% unless current_admin %>
+  <%= link_to "Login", new_admin_session_path %><br/>
+  <%= link_to "Sign up", new_admin_registration_path %><br/>
+<% else %>
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete %><br/>
+<% end %>

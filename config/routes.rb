@@ -6,4 +6,3 @@ Rails.application.routes.draw do
   get 'home/access'
   get 'home/info'
 end
-
