@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def access
   end
+  
+  def info
+  end
 end

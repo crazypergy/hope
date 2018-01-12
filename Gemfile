@@ -32,7 +32,7 @@ gem 'execjs'
 gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'figaro'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # For the access map
 gem 'gmaps4rails'

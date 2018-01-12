@@ -13,17 +13,40 @@
   <body>
 
     <!-- Here are some mock links. I'd like to put all of these in a nice looking navbar -->
-    <%= link_to "Home", "#", class: "define class here" %>
-    <%= link_to "Programs", "#" %>
-    <%= link_to "Message", "#" %>
-    <%= link_to "Kids", "#" %>
-    <%= link_to "English", "#" %>
-    <%= link_to "Piano", "#" %>
-    <%= link_to "Try Art", "#" %>
-    <%= link_to "Dance", "#" %>
-    <%= link_to "Access", home_access_path %>
+    <!-- As a link -->
+	<div class="navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">links toggle button</span>
+				<span class="mdl-color--white white icon-bar"></span>
+				<span class="mdl-color--white white icon-bar"></span>
+				<span class="mdl-color--white icon-bar"></span>
+			</button>
+			<a href="#"><span style="font-size: 30px; color: orange;" class="navbar-brand">Hope</span></a>
+		</div>
 
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Home", "#", style: "color: lightblue;" %></li>
+				<li><%= link_to "Messages", "#", style: "color: lightblue" %></li>
+				<li><%= link_to "Location", "#", style: "color: lightblue" %></li>
+				<li class="dropdown">	
+					<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color: lightblue;">
+						Programs<span class="mdi mdi-chevron-down"></span>
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><%= link_to "#", "#", style: "color: lightblue" %></li>
+						<li role="presentation"><%= link_to "#", "#", style: "color: lightblue" %></li>
+						<li role="presentation"><%= link_to "#", "#", style: "color: lightblue" %></li>
+					</ul>
+				</li>
+				<li><%= link_to "Access", home_access_path, style:"color: lightblue;" %></li>
+			</ul>
+		</div>
+	</div>
 
-    <%= yield %>
+	
+	<%= yield %>
+	
   </body>
 </html>
