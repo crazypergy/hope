@@ -5,7 +5,6 @@
 <%= str %>
 
 <p><%= @message.date.strftime('%Y年%m月%d日') %></p>
-<strong><%= @message.title %></strong>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
