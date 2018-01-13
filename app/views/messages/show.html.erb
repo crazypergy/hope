@@ -1,9 +1,16 @@
 <!-- TODO: Delete? Already have notice in application.html.erb -->
 <!--p id="notice"><%= notice %></p-->
 
-<% str = getVideoTitleFrom(@message.link) %>
-<%= str %>
+<% video_data = getVideoDataFrom(@message.link) %>
 
+<iframe
+  width="560"
+  height="315"
+  src='https://www.youtube.com/embed/<%= video_data[:id] %>'
+  frameborder="0" allow="autoplay; encrypted-media"
+  allowfullscreen>
+ </iframe>
+ 
 <p><%= @message.date.strftime('%Y年%m月%d日') %></p>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |

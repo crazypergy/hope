@@ -3,7 +3,7 @@ require 'uri'
 require 'json'
 
 module MessagesHelper
-  def getVideoTitleFrom(link)
+  def getVideoDataFrom(link)
     if link =~ /youtube\.com/
       video_id = link.gsub(/(.*)(watch\?v=)/, '')
     else
@@ -19,6 +19,13 @@ module MessagesHelper
       )
     json = Net::HTTP.get(uri)
     json = JSON.parse(json)
-    result = json["items"][0]["snippet"]["title"]
+
+    # Explicitly declare as new Hash because of how rails handles hashes/params/whatever
+    video_data = Hash.new
+
+    video_data[:title] = json["items"][0]["snippet"]["title"]
+    video_data[:id] = json["items"][0]["id"]
+
+    video_data
   end
 end
