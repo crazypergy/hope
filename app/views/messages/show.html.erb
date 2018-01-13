@@ -1,19 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @message.date %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @message.title %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @message.link %>
-</p>
+<%= @message.link.html_safe %>
+<p><%= @message.date.strftime('%Y年%m月%d日') %></p>
+<strong><%= @message.title %></strong>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
