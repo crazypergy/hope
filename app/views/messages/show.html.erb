@@ -1,6 +1,9 @@
-<p id="notice"><%= notice %></p>
+<!-- TODO: Delete? Already have notice in application.html.erb -->
+<!--p id="notice"><%= notice %></p-->
 
-<%= @message.link.html_safe %>
+<% str = getVideoTitleFrom(@message.link) %>
+<%= str %>
+
 <p><%= @message.date.strftime('%Y年%m月%d日') %></p>
 <strong><%= @message.title %></strong>
 

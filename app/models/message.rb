@@ -5,6 +5,8 @@ class Message < ApplicationRecord
 
   validates :link,
     presence: true,
-    length: { maximum: 225 },
-    format: { with: /(\A<iframe\swidth)(.*)(src=\"https:\/\/www\.youtube\.com\/embed)(.*)(><\/iframe>\Z)/ }
+    length: { maximum: 100 },
+    format: { with: /www\.youtube\.com\/watch\?v=|https:\/\/youtu\.be\// }
+    # iframe format
+    # format: { with: /(\A<iframe\swidth)(.*)(src=\"https:\/\/www\.youtube\.com\/embed)(.*)(><\/iframe>\Z)/ }
 end
