@@ -25,6 +25,7 @@ module MessagesHelper
 
     video_data[:title] = json["items"][0]["snippet"]["title"]
     video_data[:id] = json["items"][0]["id"]
+    video_data[:image] = json["items"][0]["snippet"]["thumbnails"]["default"]["url"]
 
     video_data
   end
