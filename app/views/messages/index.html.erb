@@ -13,8 +13,10 @@
       <tr>
         <td><%= message.date.strftime('%Y年%m月%d日') %></td>
         <td><%= link_to truncate(video_data[:title], length: 30), message_path(message) %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
-        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_admin.authorized %>
+          <td><%= link_to 'Edit', edit_message_path(message) %></td>
+          <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
