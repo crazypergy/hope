@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
+
   resources :messages
   devise_for :admins
-  root to: 'home#index'
 
   get 'home/index'
   get 'home/access'
