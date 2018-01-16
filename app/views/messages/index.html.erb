@@ -4,24 +4,24 @@
 
 <!-- TODO: order all messages by :date in descending order in the controller -->
 
-<%= link_to 'New Message', new_message_path %>
+<%= if authorized? then link_to 'New Message', new_message_path end %>
 
-<table>
-  <tbody>
-    <% @messages.each do |message| %>
-      <% video_data = getVideoDataFrom(message.link) %>
-      <tr>
-        <td><%= message.date.strftime('%Y年%m月%d日') %></td>
-        <td><%= link_to image_tag(video_data[:image]), message_path(message) %></td>
-        <td><%= link_to truncate(video_data[:title], length: 30), message_path(message) %></td>
-        <% if authorized? %>
-          <td><%= link_to 'Edit', edit_message_path(message) %></td>
-          <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+
+<div id="messages_container">
+  <% @messages.each do |message| %>
+    <% video_data = getVideoDataFrom(message.link) %>
+    <div id="<%= video_data[:id] %>_container">
+      <span><%= message.date.strftime('%Y年%m月%d日') %></span> |
+      <span><%= link_to truncate(video_data[:title], length: 30), message_path(message) %></span><br/>
+      <%= link_to image_tag(video_data[:image]), message_path(message), id: video_data[:id] + "_image" %>
+      <% if authorized? %>
+        <%= link_to 'Edit', edit_message_path(message) %> |
+        <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
     <% end %>
-  </tbody>
-</table>
+    <br/>
+  <% end %>
+</div>
 
 <br>
 

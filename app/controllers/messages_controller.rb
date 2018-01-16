@@ -17,16 +17,14 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
+    redirectUnauthorizedUser unless authorized?
+
     @message = Message.new
   end
 
   # GET /messages/1/edit
   def edit
-    unless authorized?
-      # TODO: Write the il8n for this
-      flash[:notice] = 'You are not authorized to view this page'
-      redirect_to messages_path
-    end
+    redirectUnauthorizedUser unless authorized?
   end
 
   # POST /messages
@@ -78,5 +76,11 @@ class MessagesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
       params.require(:message).permit(:date, :title, :link)
+    end
+
+    def redirectUnauthorizedUser
+      # TODO: Write the il8n for this
+      flash[:notice] = 'You are not authorized to view this page'
+      redirect_to messages_path
     end
 end
