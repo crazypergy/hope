@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# TODO: Add like... 20 videos or something to test pagination with kaminari
+link_ids = [
+	"83huVf7qa5E",
+	"R_4Sberw-ZY",
+	"KkuICGFmwvY",
+	"EKzVGl5kCNw",
+	"GGi-3CVV00Y"
+]
+
+link_ids.each do |id|
+	Message.create(
+		date: Time.new(2018, 1, 16),
+		link: "https://youtu.be/" + id
+		)
+end
