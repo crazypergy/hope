@@ -1,10 +1,13 @@
 class MessagesController < ApplicationController
+
+  include ApplicationHelper
+
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.page(params[:page])
   end
 
   # GET /messages/1
@@ -19,6 +22,11 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
+    unless authorized?
+      # TODO: Write the il8n for this
+      flash[:notice] = 'You are not authorized to view this page'
+      redirect_to messages_path
+    end
   end
 
   # POST /messages
