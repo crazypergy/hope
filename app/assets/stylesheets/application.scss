@@ -15,3 +15,104 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.top_row {
+	height: 10%;
+	z-index:100;
+	font-size: large;
+	position: absolute;
+	width: 100%;
+	background-color: rgba(220, 220, 220, 0.6);
+}
+
+.top_text{
+
+}
+
+
+.favicon {
+	min-height: 10%;
+	text-align: left;
+	z-index: 101;
+	display: inline-block;
+	position: absolute;
+	filter: grayscale(100%);
+}
+
+.hectext{
+	color: white !important;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.bottom_row {
+	height: auto;
+	position: absolute;
+	width: 100%;
+	background-color: rgba(220, 220, 220, 0.6);
+	bottom: 0;
+}
+
+.weltext{
+	min-height: 10%;
+	font-family: "Impact Header";
+	text-align: center;
+	color: #dc3b2c;
+	z-index: 100;
+	bottom: 10%;
+}
+
+.dropdown-menu {
+	background-color: rgba(220, 220, 220, 0.6);
+	text-decoration: none;
+}
+
+
+
+a {
+	color: #dc3b2c;
+	
+}
+
+/*a:link {
+	color: rgb(72, 116, 151);
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+*/
+.bg{
+	width: 100%;
+}
+
+.bg_container{
+	height: 100px;
+	max-width: auto;
+	position:relative;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+	overflow: hidden;
+}
+
+html, body{
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	height: 100%;
+}
+
+.container-fluid, .row{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
