@@ -20,7 +20,7 @@ body,
 html {
   width: 100%;
   height: 100%;
-  background-color: #d3d3d3;
+  background-color: #000;
 
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -36,7 +36,7 @@ html {
 #mainNav .navbar-brand {
   font-weight: 700; /* ? */
   text-transform: uppercase;
-  color: #212529;
+  color: #FFF;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -60,6 +60,7 @@ html {
 @media (min-width: 768px) {
   .navbar.navbar-default .navbar-nav > li > a {
     line-height: 3.5;
+    color: #FFF;
   }
 }
 
@@ -86,4 +87,43 @@ html {
 #buffer {
   width: 100%;
   margin: 45px 0px;
+}
+
+// Styling for the masthead
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: url('hope_black.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*@include background-cover;*/
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-weight: 300;
+  }
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.15rem;
+    }
+  }
+  @media (min-width: 992px) {
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
 }
