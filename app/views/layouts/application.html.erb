@@ -8,47 +8,53 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
-  <body>
-    <!-- Here are some mock links. I'd like to put all of these in a nice looking navbar -->
-    <!-- As a link -->
-  	<div class="navbar-default" role="navigation">
-  		<div class="navbar-header">
-  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-  				<span class="sr-only">links toggle button</span>
-  				<span class="mdl-color--white white icon-bar"></span>
-  				<span class="mdl-color--white white icon-bar"></span>
-  				<span class="mdl-color--white icon-bar"></span>
-  			</button>
-  			<a href="#"><span style="font-size: 30px; color: orange;" class="navbar-brand">Hope</span></a>
-  		</div>
+  <body id="page-top">
+    <div class="navbar navbar-default navbar-fixed-top" id="mainNav">
+      <div class="container">
+        <%= link_to "Hope", home_index_path, class: "navbar-brand" %>
 
-  		<div class="navbar-collapse collapse">
-  			<ul class="nav navbar-nav">
-  				<li><%= link_to "Home", home_index_path, style: "color: lightblue;" %></li>
-  				<li><%= link_to "Messages", messages_path, style: "color: lightblue" %></li>
-  				<li><%= link_to "Location", home_access_path, style: "color: lightblue" %></li>
-  				<li class="dropdown">	
-  					<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color: lightblue;">
-  						Programs<span class="mdi mdi-chevron-down"></span>
-  					</a>
-  					<ul class="dropdown-menu" role="menu">
-  						<li role="presentation"><%= link_to "#", "#", style: "color: lightblue" %></li>
-  						<li role="presentation"><%= link_to "#", "#", style: "color: lightblue" %></li>
-  						<li role="presentation"><%= link_to "#", "#", style: "color: lightblue" %></li>
-  					</ul>
-  				</li>
-  				<li><%= link_to "Access", home_access_path, style:"color: lightblue;" %></li>
-  			</ul>
-  		</div>
-  	</div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-    <!-- TODO: Bootstrapify these -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav pull-right">
+            <li class="nav-item">
+              <%= link_to "Home", home_index_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Messages", messages_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Access", home_access_path, class: "nav-link" %>
+            </li>
+            <!-- TODO: il8n化 -->
+            <li class="nav-item">
+              <%= link_to "日本語", home_access_path, class: "nav-link" %>
+            </li>
+            <% if current_admin %>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_admin_session_path, class: "nav-link", method: :delete %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="buffer"></div>
+
+    <!-- TODO: Bootstrap -->
     <span class="notice"><%= notice %></span>
-    <span class="alert"><%= alert %></span>	
+    <span class="alert"><%= alert %></span> 
 	 
     <%= yield %>
-	
   </body>
 </html>

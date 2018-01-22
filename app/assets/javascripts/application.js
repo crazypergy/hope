@@ -16,3 +16,23 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+
+
+// スクロールするとnavの色を変える
+// https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
+$(document).ready(function(){
+   var scroll_start = 0;
+   var mainNav = $('#mainNav');
+   var offset = mainNav.offset();
+
+   if (mainNav.length){
+    $(document).scroll(function() {
+      scroll_start = $(this).scrollTop();
+      if(scroll_start > offset.top) {
+        $(".navbar-default").css('background-color', '#f0f0f0');
+      } else {
+        $('.navbar-default').css('background-color', 'transparent');
+      }
+    });
+  }
+});

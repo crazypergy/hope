@@ -14,3 +14,76 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "css/font-awesome";
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #d3d3d3;
+
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* -------------------------------------------------------------- */
+
+
+
+
+
+/* Nav style */
+
+#mainNav .navbar-brand {
+  font-weight: 700; /* ? */
+  text-transform: uppercase;
+  color: #212529;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.navbar-default {
+  background-color: transparent;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar-nav {
+  list-style: none;
+}
+
+/* ulを縦の中央に調整する */
+@media (min-width: 768px) {
+  .navbar.navbar-default .navbar-nav > li > a {
+    line-height: 3.5;
+  }
+}
+
+.nav-item {
+  margin: 0px 7px;
+
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  text-decoration: none !important;
+}
+
+/* -------------------------------------------------------------- */
+
+
+
+
+
+/* Home#Index Style */
+
+#buffer {
+  width: 100%;
+  margin: 45px 0px;
+}
