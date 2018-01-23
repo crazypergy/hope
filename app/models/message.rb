@@ -7,5 +7,5 @@ class Message < ApplicationRecord
     length: { maximum: 100 },
     format: { with: /www\.youtube\.com\/watch\?v=|https:\/\/youtu\.be\// }
 
-  paginates_per 10
+  paginates_per 9
 end

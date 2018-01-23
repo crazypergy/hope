@@ -24,8 +24,11 @@ module MessagesHelper
     video_data = Hash.new
 
     video_data[:title] = json["items"][0]["snippet"]["title"]
+    video_data[:description] = json["items"][0]["snippet"]["description"]
     video_data[:id] = json["items"][0]["id"]
     video_data[:image] = json["items"][0]["snippet"]["thumbnails"]["default"]["url"]
+    video_data[:med_image] = json["items"][0]["snippet"]["thumbnails"]["medium"]["url"]
+    video_data[:big_image] = json["items"][0]["snippet"]["thumbnails"]["high"]["url"]
 
     video_data
   end

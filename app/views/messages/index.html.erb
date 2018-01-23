@@ -1,23 +1,41 @@
-<h1>Messages</h1>
-
 <!-- TODO: order all messages by :date in descending order in the controller -->
 
 <%= if authorized? then link_to 'New Message', new_message_path end %>
 
+<!-- TODO: scrollreveal.js -->
+<div class="container text-center" id="messageIndex">
+    <% @messages.each do |message| %>
+      <% idx = @messages.index(message) %>
+      <% if ((idx + 1) % 3) == 1 %>
+        <div class="row">
+      <% end %>
 
-<div id="messages_container">
-  <% @messages.each do |message| %>
-    <% video_data = getVideoDataFrom(message.link) %>
-    <div id="<%= video_data[:id] %>_container">
-      <span><%= message.date.strftime('%Y年%m月%d日') %></span> |
-      <span><%= link_to truncate(video_data[:title], length: 30), message_path(message) %></span><br/>
-      <%= link_to image_tag(video_data[:image]), message_path(message), id: video_data[:id] + "_image" %>
-      <% if authorized? %>
-        <%= link_to 'Edit', edit_message_path(message) %> |
-        <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-    <% end %>
-    <br/>
+        <!-- TODO: flex col-xx-3 and justify-content-around -->
+        <% video_data = getVideoDataFrom(message.link) %>
+        <div id="<%= video_data[:id] %>" class="video_div col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <div class="big_video_image col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl">
+          <%= link_to image_tag(video_data[:big_image]), message_path(message), id: video_data[:id] + "_image" %>
+          </div>
+          <div class="med_video_image hidden-xs col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <%= link_to image_tag(video_data[:med_image]), message_path(message), id: video_data[:id] + "_image" %>
+          </div>
+          <h3 class="col-sm-12">
+            <%= link_to truncate(video_data[:title], length: 30), message_path(message),class: "video_link" %>
+          </h3>
+          <span class="video_details col-sm-12">
+            <%= truncate(video_data[:description], length: 100) %>
+          </span>
+          <hr>
+          <span class="col-sm-12">(<%= message.date.strftime('%Y年%m月%d日') %>)</span>
+          <% if authorized? %>
+            <%= link_to 'Edit', edit_message_path(message) %>
+            <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+
+      <% if ((idx + 1) % 3) == 0 %>
+        </div>
+      <% end %>
   <% end %>
 </div>
 
