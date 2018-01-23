@@ -2,7 +2,6 @@
 
 <%= if authorized? then link_to 'New Message', new_message_path end %>
 
-<!-- TODO: scrollreveal.js -->
 <div class="container text-center" id="messageIndex">
     <% @messages.each do |message| %>
       <% idx = @messages.index(message) %>

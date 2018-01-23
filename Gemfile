@@ -34,8 +34,9 @@ gem 'execjs'
 gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'figaro'
-#gem 'bootstrap-sass', '3.3.6'
-gem 'bootstrap'
+gem 'bootstrap-sass', '3.3.6'
+# gem 'bootstrap'
+# gem 'scrollreveal-rails'
 gem 'kaminari'
 
 # For the access map
