@@ -1,4 +1,5 @@
-<!-- TODO: order all messages by :date in descending order in the controller -->
+<!-- TODO: order all messages by :date in descending order in the controller, or with youtube API -->
+<!-- TODO: Click on panel redirects to video -->
 
 <%= if authorized? then link_to 'New Message', new_message_path end %>
 
@@ -24,12 +25,12 @@
                 <%= link_to truncate(video_data[:title], length: 30), message_path(message),class: "video_link" %>
               </h5>
 
-              <hr>
+              <hr><br/>
 
               <span class="video_details col-xs-12">
                 <%= truncate(video_data[:description], length: 75) %>
               </span>
-              <span class="col-sm-12 col-xl-12">
+              <span class="video_date col-sm-12 col-xl-12">
                 (<%= message.date.strftime('%Y年%m月%d日') %>)
               </span>
               <% if authorized? %>
@@ -45,7 +46,5 @@
       <% end %>
   <% end %>
 </div>
-
-<br>
 
 <%# paginate @messages %>

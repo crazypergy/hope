@@ -21,6 +21,8 @@ html {
   width: 100%;
   height: 100%;
 
+  background-color: #f2f2f2;
+
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -35,7 +37,7 @@ html {
 #mainNav .navbar-brand {
   font-weight: 700; /* ? */
   text-transform: uppercase;
-  color: #FFF;
+  color: #000;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -59,7 +61,7 @@ html {
 @media (min-width: 768px) {
   .navbar.navbar-default .navbar-nav > li > a {
     line-height: 3.5;
-    color: #FFF;
+    color: #000;
   }
 }
 
@@ -114,7 +116,24 @@ messageIndex {
 }
 
 .video_div {
-  word-break: break-all; /* 長い文字列に対応できた！！！ドヤドヤドヤドヤwwww */
+  word-break: break-all; /* 長い文字列に対応できた */
+}
+
+
+/* TODO: make sure this is Message#Index specific */
+.panel {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.panel:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .row {
@@ -129,4 +148,8 @@ messageIndex {
 .row > [class*='col-'] {
   display: flex;
   flex-direction: row;
+}
+
+.video_details, .video_date {
+  text-align: left;
 }

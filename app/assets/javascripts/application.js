@@ -29,13 +29,13 @@ $(document).ready(function(){
     $(document).scroll(function() {
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) {
-        $(".navbar-default").css('background-color', '#f0f0f0');
+        $(".navbar-default").css('background-color', '#FFF');
         $(".navbar-brand").css('color', '#000');
         $(".nav-link").css('color', '#000');
       } else {
         $('.navbar-default').css('background-color', 'transparent');
-        $(".navbar-brand").css('color', '#FFF');
-        $(".nav-link").css('color', '#FFF');
+        $(".navbar-brand").css('color', '#000');
+        $(".nav-link").css('color', '#000');
       }
     });
   }
