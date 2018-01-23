@@ -114,7 +114,7 @@ messageIndex {
 }
 
 .video_div {
-  background-color: gray;
+  word-break: break-all; /* 長い文字列に対応できた！！！ドヤドヤドヤドヤwwww */
 }
 
 .row {
@@ -123,9 +123,10 @@ messageIndex {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .row > [class*='col-'] {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
