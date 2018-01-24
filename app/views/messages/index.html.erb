@@ -10,6 +10,8 @@
     <iframe width="100%" height="550" src='https://www.youtube.com/embed/<%= first_video_data[:id] %>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
+  <div id="vids">
+
   <h2>Messages</h2>
 
   <hr>
@@ -54,10 +56,12 @@
           </div>
         </div>
 
-      <% if ((idx + 1) % 3) == 0 %>
+      <%# TODO: || の右側のコードが合ってるかどうか確認すること %>
+      <% if ((idx + 1) % 3) == 0 || @messages[@messages.index(message)] == @messages[-1] %>
         </div>
       <% end %>
   <% end %>
+  </div>
 </div>
 
 <%# paginate @messages %>

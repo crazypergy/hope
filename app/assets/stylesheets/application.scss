@@ -21,7 +21,7 @@ html {
   width: 100%;
   height: 100%;
 
-  background-color: #f2f2f2;
+  background-color: #000;
 
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -97,6 +97,7 @@ header.masthead {
   background-repeat: no-repeat;
   background-position: center center;
   background: cover;
+  background-size: contain;
 }
 
 /* -------------------------------------------------------------- */
@@ -116,6 +117,12 @@ messageIndex {
   margin-left: calc(50% - 50vw);
   width: 100vw;
   margin-bottom: 70px;
+}
+
+#vids {
+  background-color: #dfdfdf;
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
 }
 
 .video_link {
