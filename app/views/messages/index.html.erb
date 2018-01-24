@@ -4,6 +4,16 @@
 <%= if authorized? then link_to 'New Message', new_message_path end %>
 
 <div class="container text-center" id="messageIndex">
+
+  <% first_video_data = getVideoDataFrom(Message.first.link) %>
+  <div id="videoHeader" width="100%">
+    <iframe width="100%" height="550" src='https://www.youtube.com/embed/<%= first_video_data[:id] %>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <h2>Messages</h2>
+
+  <hr>
+
     <% @messages.each do |message| %>
       <% idx = @messages.index(message) %>
       <% if ((idx + 1) % 3) == 1 %>

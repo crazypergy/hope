@@ -111,6 +111,13 @@ messageIndex {
   margin: 0px auto;
 }
 
+/* https://stackoverflow.com/questions/5590214/make-child-div-stretch-across-width-of-page */
+#videoHeader {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  margin-bottom: 70px;
+}
+
 .video_link {
   text-decoration: none;
 }

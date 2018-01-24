@@ -20,6 +20,8 @@
 
 // スクロールするとnavの色を変える
 // https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
+
+//TODO: transparentじゃなくてnavbar-defaultとnavbar-inverseでやってみる
 $(document).ready(function(){
    var scroll_start = 0;
    var mainNav = $('#mainNav');
