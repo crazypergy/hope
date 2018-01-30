@@ -1,5 +1,4 @@
 <!-- TODO: order all messages by :date in descending order in the controller, or with youtube API -->
-<!-- TODO: Click on panel redirects to video -->
 
 <%= if authorized? then link_to 'New Message', new_message_path end %>
 
@@ -7,7 +6,12 @@
 
   <% first_video_data = getVideoDataFrom(Message.first.link) %>
   <div id="videoHeader" width="100%">
-    <iframe width="100%" height="550" src='https://www.youtube.com/embed/<%= first_video_data[:id] %>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe width="100%"
+    height="550"
+    src='https://www.youtube.com/embed/<%= first_video_data[:id] %>'
+    frameborder="0"
+    allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
   </div>
 
   <div id="vids">
@@ -24,32 +28,48 @@
 
         <%# TODO: panelをクリックすると動画のshowに移転されるから、link_to image_tag何たらかんたらはいらなくなった。
                   普通のrailsの<img>タグを使ったらいいかもしれない %>
+
         <% video_data = getVideoDataFrom(message.link) %>
+
         <div class="panel panel-default col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3" onclick="window.location = '/messages/<%= message.id %>'">
           <div class="panel-body">
             <div id="<%= video_data[:id] %>" class="video_div">
-              <div class="big_video_image col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl">
-                <%= link_to image_tag(video_data[:big_image]), message_path(message), id: video_data[:id] + "_image" %>
+              <div class="row">
+                <div class="big_video_image col-xs-10 hidden-sm hidden-md hidden-lg hidden-xl">
+                  <%= link_to image_tag(video_data[:big_image]), message_path(message), id: video_data[:id] + "_image" %>
+                </div>
+                <div class="med_video_image hidden-xs col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                  <%= link_to image_tag(video_data[:image]), message_path(message), id: video_data[:id] + "_image" %>
+                </div>
               </div>
-              <div class="med_video_image hidden-xs col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <%= link_to image_tag(video_data[:image]), message_path(message), id: video_data[:id] + "_image" %>
+
+              <div class="row">
+                <h5 class="col-xs-10 col-sm-10 col-md-10 col-xl-10">
+                  <%= link_to truncate(video_data[:title], length: 30), message_path(message),class: "video_link" %>
+                </h5>
               </div>
-          
-              <h5 class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
-                <%= link_to truncate(video_data[:title], length: 30), message_path(message),class: "video_link" %>
-              </h5>
 
-              <hr><br/>
+              <hr>
 
-              <span class="video_details col-xs-12">
-                <%= truncate(video_data[:description], length: 75) %>
-              </span>
-              <span class="video_date col-sm-12 col-xl-12">
-                (<%= message.date.strftime('%Y年%m月%d日') %>)
-              </span>
+              <div class="row">
+                <span class="video_details col-xs-10">
+                  <%= truncate(video_data[:description], length: 75) %>
+                </span>
+              </div>
+
+              <br/>
+
+              <div class="row">
+                <span class="video_date col-xs-10">
+                  (<%= message.date.strftime('%Y年%m月%d日') %>)
+                </span>
+              </div>
+
               <% if authorized? %>
-                <%= link_to 'Edit', edit_message_path(message) %>
-                <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <div class="row">
+                  <%= link_to 'Edit', edit_message_path(message) %>
+                  <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
               <% end %>
             </div>
 

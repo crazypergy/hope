@@ -2,7 +2,7 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's 
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
@@ -100,7 +100,7 @@ header.masthead {
   background-size: contain;
 }
 
-.carousel-inner > .item > img, 
+.carousel-inner > .item > img,
 .carousel-inner > .item > a > img{
   width: 60%;
   margin: auto;
@@ -205,6 +205,7 @@ messageIndex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-content: center;
 }
 
 .row > [class*='col-'] {
@@ -212,6 +213,16 @@ messageIndex {
   flex-direction: row;
 }
 
-.video_details, .video_date {
-  text-align: left;
+.panel-body {
+  margin: 0px auto;
+  width: 100%;
 }
+
+a {
+  display: block;
+  margin: 0px auto;
+}
+
+/*.video_details, .video_date {
+  text-align: left;
+}*/
