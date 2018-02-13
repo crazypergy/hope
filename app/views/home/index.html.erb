@@ -1,17 +1,45 @@
 <!-- Header -->
+<!-- header id="hopeHeader" class="masthead"></header> -->
 
-<div class="jumbotron">
-  <h1 class="display-3">Hello</h1>
-  <p class="lead">Carl's home page stuff will go here</p>
-  <hr class="my-4">
-  
-  <p class="lead">
-    There's other stuff under this, but it doesn't necessarily need to be on the home page
-  </p>
+<div class="container-fluid">
+  <div class="row col-lg-12 top_row"></div>
+</div>
+<div class="container-fluid top_text">
+  <div class="row">
+    <div class="col-lg-2 favicon">
+      <div class="col-lg-4">
+        <%= image_tag('favicon.png', class: 'img-fluid') %>
+      </div>
+      <div class="col-lg-5"></div>
+    </div>
+  </div>
 </div>
 
-<!--header id="hopeHeader" class="masthead"></header-->
+<div class="bg_container">
+  <%= image_tag('bgimg.jpeg', class: 'img-fluid bg') %>
+</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="bottom_row">
+      <div class="weltext">
+        <div class="col-lg-3"></div>
+        <li class="col-lg-2 dropup">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><h1>Contact<span class="caret"></span></h1>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><h1 style="color: #e5b000;">Facebook</h1></a></li>
+            <li><a href="#"><h1 style="color: #e5b000;">E-mail</h1></a></li>
+            <li><a href="#"><h1 style="color: #e5b000;">Map</h1></a></li>
+          </ul>
+        </li>
+        <div class="col-lg-2"><a href="#"><h1>Watch</h1></a></div>
+        <div class="col-lg-2 h1"><a href="#">Calendar</a></div>
+        <div class="col-lg-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Carousel -->
 <div id="homeCarousel" class="carousel slide" data-ride="carousel">
