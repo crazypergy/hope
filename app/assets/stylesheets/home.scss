@@ -31,8 +31,7 @@ $orange_yellow: #e5b000;
   background-color: rgba(220, 220, 220, 0.6);
 }
 
-/* TODO: Change class name */
-.favicon {
+#brand_img {
   text-align: left;
   margin-left: 20px;
   z-index: 101;
@@ -42,12 +41,11 @@ $orange_yellow: #e5b000;
   filter: grayscale(100%);
 }
 
-/* What does hec stand for? */
-.hectext {
+#banner_text {
   color: white !important;
   display: inline-block;
   vertical-align: middle;
-  margin: 0 !important;
+  margin: 0 10px !important;
   padding: 0 !important;
 }
 
@@ -59,7 +57,7 @@ $orange_yellow: #e5b000;
   background-color: rgba(220, 220, 220, 0.6);
 }
 
-.weltext {
+.welcome_text {
   min-height: 10%;
   font-family: "Impact Header";
   text-align: center;
@@ -117,19 +115,18 @@ a:link {
   border: 0px;
 }
 
+/* TODO: Same with above comment */
 ul, li {
   list-style-type: none;
 }
 
+/* From previous idea. Keep for reference */
 /*
 #buffer {
   width: 100%;
   margin: 45px 0px;
 }
-*/
 
-/* From previous idea. Keep for reference */
-/*
 header.masthead {
   padding-top: 20rem;
   padding-bottom: 40rem;

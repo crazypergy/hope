@@ -4,7 +4,7 @@
 
 /* Message#Index Style */
 
-messageIndex {
+#messageIndex {
   margin: 0px auto;
 }
 
@@ -43,7 +43,7 @@ messageIndex {
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
-/*
+
 .row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,12 +64,11 @@ messageIndex {
   width: 100%;
 }
 
-
 a {
   display: block;
   margin: 0px auto;
 }
-*/
+
 /*.video_details, .video_date {
   text-align: left;
 }*/

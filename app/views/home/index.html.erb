@@ -1,8 +1,11 @@
 <!-- Header -->
 <nav id="home_nav" class="navbar navbar-inverse">
-  <%= image_tag('favicon.png', class: 'img-fluid favicon') %>
+  <%= image_tag('favicon.png', id: 'brand_img', class: 'img-fluid') %>
+  <h3 id="banner_text">Hope English Church</h3>  
 </nav>
-<!--
+
+<!-- TODO: Keep for reference. If needed, make nav above responsive
+
 <div class="container-fluid">
   <div class="row top_row">
     <div class="col-lg-2">
@@ -22,7 +25,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="bottom_row">
-      <div class="weltext">
+      <div class="welcome_text">
         <div class="col-lg-3"></div>
         <li class="col-lg-2 dropup">
           <%= link_to "#", class: "nav_link dropdown-toggle", "data-toggle": "dropdown" do %>
