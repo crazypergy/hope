@@ -7,8 +7,20 @@
 $soft_red: #dc3b2c;
 $orange_yellow: #e5b000;
 
+/*-----------------------------------------------*/
 
 /* Home#Index Style */
+#home_nav {
+  height: 10%;
+  width: 100%;
+  background-color: rgba(220, 220, 220, 0.6) !important;
+  border: none;
+  border-radius: 0;
+  top: 0%;
+  position: absolute;
+  z-index: 103;
+}
+
 .top_row {
   height: 10%;
   top: 0%;
@@ -21,11 +33,12 @@ $orange_yellow: #e5b000;
 
 /* TODO: Change class name */
 .favicon {
-  min-height: 10%;
   text-align: left;
+  margin-left: 20px;
   z-index: 101;
+  height: 100%;
   display: inline-block;
-  position: absolute;
+  position: relative;
   filter: grayscale(100%);
 }
 
