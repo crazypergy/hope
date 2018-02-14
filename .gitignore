@@ -27,3 +27,6 @@
 
 # Ignore Ruby version
 /.ruby-version
+
+# Ignore Travis CI for now
+/.travis.yml
