@@ -1,3 +1,75 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Message#Index Style */
+
+messageIndex {
+  margin: 0px auto;
+}
+
+/* https://stackoverflow.com/questions/5590214/make-child-div-stretch-across-width-of-page */
+#videoHeader {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  margin-bottom: 70px;
+}
+
+#vids {
+  background-color: #dfdfdf;
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.video_link {
+  text-decoration: none;
+}
+
+.video_div {
+  word-break: break-all; /* 長い文字列に対応できた */
+}
+
+.panel {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.panel:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+/*
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel-body {
+  margin: 0px auto;
+  width: 100%;
+}
+
+
+a {
+  display: block;
+  margin: 0px auto;
+}
+*/
+/*.video_details, .video_date {
+  text-align: left;
+}*/

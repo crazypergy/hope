@@ -1,3 +1,177 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* Colors */
+$soft_red: #dc3b2c;
+$orange_yellow: #e5b000;
+
+
+/* Home#Index Style */
+.top_row {
+  height: 10%;
+  top: 0%;
+  z-index: 100;
+  font-size: large;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(220, 220, 220, 0.6);
+}
+
+/* TODO: Change class name */
+.favicon {
+  min-height: 10%;
+  text-align: left;
+  z-index: 101;
+  display: inline-block;
+  position: absolute;
+  filter: grayscale(100%);
+}
+
+/* What does hec stand for? */
+.hectext {
+  color: white !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.bottom_row {
+  /*height: auto;*/
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(220, 220, 220, 0.6);
+}
+
+.weltext {
+  min-height: 10%;
+  font-family: "Impact Header";
+  text-align: center;
+  color: $soft_red;
+  z-index: 100;
+  bottom: 0%;
+}
+
+.dropdown-menu {
+  background-color: rgba(220, 220, 220, 0.6);
+  text-decoration: none;
+}
+
+.nav_link > h1 {
+  color: $soft_red;
+}
+
+.dropup_link > h1 {
+  color: $orange_yellow;
+}
+
+.nav_link:visited, .drop_link:visited {
+	text-decoration: none;
+}
+
+/* TODO: commented out, so let's fix this when we can
+a:link {
+  color: rgb(72, 116, 151);
+  text-decoration: none;
+}
+*/
+
+.bg {
+  width: 100%;
+}
+
+.bg_container {
+  height: 100px;
+  max-width: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*
+ * TODO: Ok for now, but kinda dangerous in the long run.
+ * class or id needed
+ */
+.container-fluid, .row {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+/*
+#buffer {
+  width: 100%;
+  margin: 45px 0px;
+}
+*/
+
+/* From previous idea. Keep for reference */
+/*
+header.masthead {
+  padding-top: 20rem;
+  padding-bottom: 40rem;
+  background-image: url('hope_black.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background: cover;
+  background-size: contain;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img{
+  width: 60%;
+  margin: auto;
+}
+
+#homeCarousel {
+  background-color: #dfdfdf;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#homeCarousel > div > div > img {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.carousel-caption {
+  visibility: hidden;
+}
+
+#homeCarousel > div > div > img:hover {
+  opacity: 0.8;
+
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none;
+}
+
+#homeVideoContainer {
+  background-color: #000;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#homeMap {
+  background-color: #dfdfdf;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+*/
