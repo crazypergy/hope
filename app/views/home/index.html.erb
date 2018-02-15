@@ -14,13 +14,25 @@
 </div>
 -->
 
-<div id="bg_container">
-  <%= image_tag('bgimg.jpeg', class: 'img-fluid bg') %>
+<nav id="home_nav" class="navbar navbar-inverse">
+  <%= image_tag('favicon.png', id: 'brand_img', class: 'img-fluid') %>
+  <h3 id="banner_text">Hope Chapel</h3>
+</nav>
 
-  <nav id="home_nav" class="navbar navbar-inverse">
-    <%= image_tag('favicon.png', id: 'brand_img', class: 'img-fluid') %>
-    <h3 id="banner_text">Hope Chapel</h3>
-  </nav>
+<div id="bg_container">
+  <div id="homeCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag "bgimg.jpg", class: "d-block img-fluid", alt: "First slide" %>
+      </div>
+      <div class="item">
+        <%= image_tag "group2.jpg", class: "d-block img-fluid", alt: "Second slide" %>
+      </div>
+      <div class="item">
+        <%= image_tag "group3.jpg", class: "d-block img-fluid", alt: "Third slide" %> 
+      </div>
+    </div>
+  </div>
 
   <div class="container-fluid" id="bottom">
     <div class="row">

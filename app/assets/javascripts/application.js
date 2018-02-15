@@ -42,21 +42,3 @@ $(document).ready(function(){
     });
   }
 });
-
-
-
-/* Message#Index */
-
-function changeToVisible() {
-  var imgs = document.getElementsByClassName("carousel-caption");
-  for(var i = 0; i < imgs.length; i++) {
-    imgs[i].style.visibility = "visible";
-  }
-}
-
-function changeToHidden() {
-  var imgs = document.getElementsByClassName("carousel-caption");
-  for(var i = 0; i < imgs.length; i++) {
-    imgs[i].style.visibility = "hidden";
-  }
-}

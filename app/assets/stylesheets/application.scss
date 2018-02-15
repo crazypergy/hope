@@ -19,3 +19,8 @@ body, html {
 
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+
+.carousel-inner > .item > img {
+  width: 100%;
+  background-size: cover;
+}
