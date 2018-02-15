@@ -10,14 +10,29 @@ $orange_yellow: #e5b000;
 /*-----------------------------------------------*/
 
 /* Home#Index Style */
+.bg {
+  width: 100%;
+}
+
+#bg_container {
+  position: absolute;
+  height: 100px;
+  max-width: auto;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 #home_nav {
+  position: absolute;
+  top: 0;
   height: 10%;
   width: 100%;
   background-color: rgba(220, 220, 220, 0.6) !important;
   border: none;
   border-radius: 0;
-  top: 0%;
-  position: absolute;
   z-index: 103;
 }
 
@@ -49,10 +64,16 @@ $orange_yellow: #e5b000;
   padding: 0 !important;
 }
 
-.bottom_row {
-  /*height: auto;*/
-  bottom: 0;
+#bottom {
   position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom_row {
+  /*height: auto;
+  bottom: 0;
+  position: absolute;*/
   width: 100%;
   background-color: rgba(220, 220, 220, 0.6);
 }
@@ -89,21 +110,6 @@ a:link {
   text-decoration: none;
 }
 */
-
-.bg {
-  width: 100%;
-}
-
-.bg_container {
-  height: 100px;
-  max-width: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
 
 /*
  * TODO: Ok for now, but kinda dangerous in the long run.

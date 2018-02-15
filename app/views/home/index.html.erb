@@ -1,8 +1,4 @@
 <!-- Header -->
-<nav id="home_nav" class="navbar navbar-inverse">
-  <%= image_tag('favicon.png', id: 'brand_img', class: 'img-fluid') %>
-  <h3 id="banner_text">Hope English Church</h3>  
-</nav>
 
 <!-- TODO: Keep for reference. If needed, make nav above responsive
 
@@ -18,49 +14,54 @@
 </div>
 -->
 
-<div class="bg_container">
+<div id="bg_container">
   <%= image_tag('bgimg.jpeg', class: 'img-fluid bg') %>
-</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="bottom_row">
-      <div class="welcome_text">
-        <div class="col-lg-3"></div>
-        <li class="col-lg-2 dropup">
-          <%= link_to "#", class: "nav_link dropdown-toggle", "data-toggle": "dropdown" do %>
-            <h1>Contact<span class="caret"></span></h1>
-          <% end %>
-          <ul class="dropdown-menu">
-            <li>
-              <%= link_to "https://www.facebook.com/HopeEnglishService", class: "dropup_link", target: "_blank" do %>
-                <h1>Facebook</h1>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#", class: "dropup_link" do %>
-                <h1>Email</h1>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to home_access_path, class: "dropup_link" do %>
-                <h1>Map</h1>
-              <% end %>
-            </li>
-          </ul>
-        </li>
+  <nav id="home_nav" class="navbar navbar-inverse">
+    <%= image_tag('favicon.png', id: 'brand_img', class: 'img-fluid') %>
+    <h3 id="banner_text">Hope English Church</h3>
+  </nav>
 
-        <div class="col-lg-2">
-          <%= link_to messages_path, class: "nav_link" do %>
-            <h1>Watch</h1>
-          <% end %>
+  <div class="container-fluid" id="bottom">
+    <div class="row">
+      <div class="bottom_row">
+        <div class="welcome_text">
+          <div class="col-lg-3"></div>
+          <li class="col-lg-2 dropup">
+            <%= link_to "#", class: "nav_link dropdown-toggle", "data-toggle": "dropdown" do %>
+              <h1>Contact<span class="caret"></span></h1>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to "https://www.facebook.com/HopeEnglishService", class: "dropup_link", target: "_blank" do %>
+                  <h1>Facebook</h1>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#", class: "dropup_link" do %>
+                  <h1>Email</h1>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to home_access_path, class: "dropup_link" do %>
+                  <h1>Map</h1>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+
+          <div class="col-lg-2">
+            <%= link_to messages_path, class: "nav_link" do %>
+              <h1>Watch</h1>
+            <% end %>
+          </div>
+          <div class="col-lg-2">
+            <%= link_to "#", class: "nav_link" do %>
+              <h1>Calendar</h1>
+            <% end %>
+          </div>
+          <div class="col-lg-3"></div>
         </div>
-        <div class="col-lg-2">
-          <%= link_to "#", class: "nav_link" do %>
-            <h1>Calendar</h1>
-          <% end %>
-        </div>
-        <div class="col-lg-3"></div>
       </div>
     </div>
   </div>
